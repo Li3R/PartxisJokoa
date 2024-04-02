@@ -11,3 +11,4 @@ public class Fitxa {
 		return this.pos;
 	}
 }
+//hola
