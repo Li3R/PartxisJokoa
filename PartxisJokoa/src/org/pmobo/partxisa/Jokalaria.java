@@ -1,6 +1,10 @@
-public class Jokalaria {
+class Jokalaria {
+    private FitxaZerrenda fitxak;
     private String izena;
-    private FitxaZerrenda lista;
+    public Jokalaria(String pIzena) {
+        fitxak = new FitxaZerrenda();
+        this.izena = pIzena;
+    }
 
-    public 
+    // Implementación de la clase Jugador
 }
