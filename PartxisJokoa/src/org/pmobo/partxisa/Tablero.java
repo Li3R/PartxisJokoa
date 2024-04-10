@@ -1,9 +1,9 @@
 class Tablero {
     private static Tablero nireTablero = null;
-    private ArrayList<Kasilla> Kasilla;
+    private ArrayList<Casilla> casillas;
 
     private Tablero() {
-        kasillak = new ArrayList<Kasilla>();
+        casillas = new ArrayList<Casilla>();
     }
 
     public static Tablero getTablero() {
@@ -13,8 +13,14 @@ class Tablero {
         return nireTablero;
     }
 
-    private Iterator<Kasilla> getIterator() {
-        return kasillak.iterator();
+    public Iterator<Casilla> getIterator() {
+        return casillas.iterator();
     }
 
-  //hueghiuwg
+    public void tableroaSortu() {
+        for (int i = 0; i < 68; i++) {
+            Casilla casilla = new Casilla(i);
+            casillas.add(casilla);
+        }
+    }
+}
