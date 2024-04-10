@@ -1,3 +1,4 @@
+import java.util.random;
 class Jokalaria {
     private FitxaZerrenda fitxak;
     private String izena;
