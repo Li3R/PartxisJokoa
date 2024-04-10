@@ -19,10 +19,8 @@ class Tablero {
     }
 
     public void tableroaSortu() {
-        for (int i = 0; i < 68; i++) {
-            Casilla casilla = new Casilla(i);
-            casillas.add(casilla);
+        for (int i = 0; i < 40; i++) {
+            casillas.add(new Casilla(i));
         }
-
     }
 }
