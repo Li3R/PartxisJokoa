@@ -5,9 +5,10 @@ public class Fitxa {
 	private String kolorea;
 	private String izena;
 	
-	public Fitxa(int pPos, String pKolorea) {
+	public Fitxa(int pPos, String pKolorea, String pIzena) {
 		this.pos = pPos;
 		this.kolorea = pKolorea;
+		this.izena = pIzena;
 	}
 
 	public int fitxarenPosizioa() {
