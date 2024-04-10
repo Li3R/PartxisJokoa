@@ -1,9 +1,9 @@
 class JokalariZerrenda {
     private static JokalariZerrenda nireJokalariZerrenda = null;
-    private ArrayList<Jugador> jokalariak;
+    private ArrayList<Jokalari> jokalariak;
 
     private JokalariZerrenda() {
-        jokalariak = new ArrayList<Jugador>();
+        jokalariak = new ArrayList<Jokalari();
     }
 
     public static JokalariZerrenda getNireJokalariZerrenda() {
