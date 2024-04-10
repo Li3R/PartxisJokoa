@@ -1,4 +1,3 @@
-
 class Teklatua {
     private Scanner scanner;
 

@@ -7,5 +7,8 @@ class Kasilla {
         this.kasillaPos = pKasillaPos;
     }
 
+    public void kasillaMota() {
+        // Code for the shared method goes here
+    }
     
 }
