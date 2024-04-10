@@ -5,6 +5,4 @@ class Jokalaria {
         fitxak = new FitxaZerrenda();
         this.izena = pIzena;
     }
-
-    // Implementación de la clase Jugador
 }

@@ -6,10 +6,7 @@ public class Fitxa {
 	public Fitxa(int pPos) {
 		this.pos = pPos;
 	}
-
 	public int getPos() {
 		return this.pos;
 	}
 }
-//hola
-//ARRIAGA PUTERO y hola

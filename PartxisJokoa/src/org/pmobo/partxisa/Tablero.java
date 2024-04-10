@@ -13,9 +13,6 @@ class Tablero {
         return nireTablero;
     }
 
-    // Implementación de métodos para gestionar el tablero
-    // ...
-
     public Iterator<Casilla> getIterator() {
         return casillas.iterator();
     }
