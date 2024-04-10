@@ -12,3 +12,10 @@ class FitxaZerrenda {
         return pFitxa.fitxarenPosizioa();
     }
 }
+public void addFitxas() {
+    for (int i = 1; i <= 4; i++) {
+        Fitxa fitxa = new Fitxa(i);
+        fitxaZerrenda.add(fitxa);
+        fitxa.setName("fitxa" + i);
+    }
+}
