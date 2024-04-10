@@ -1,4 +1,5 @@
 class Tablero {
+
     private static Tablero nireTablero = null;
     private ArrayList<Casilla> casillas;
 
@@ -22,5 +23,6 @@ class Tablero {
             Casilla casilla = new Casilla(i);
             casillas.add(casilla);
         }
+
     }
 }

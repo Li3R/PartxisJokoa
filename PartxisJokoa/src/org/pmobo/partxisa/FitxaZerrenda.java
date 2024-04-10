@@ -8,6 +8,9 @@ class FitxaZerrenda {
     public Iterator<Fitxa> getIterator() {
         return fitxaZerrenda.iterator();
     }
+    public int fitxarenPosizioa(Fitxa pFitxa) {
+        return pFitxa.fitxarenPosizioa();
+    }
 }
 public void addFitxas() {
     for (int i = 1; i <= 4; i++) {
