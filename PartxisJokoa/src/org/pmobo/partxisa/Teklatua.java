@@ -11,7 +11,7 @@ class Teklatua {
         return scanner.nextLine();
     }
     public int fitxaAukeratu() {
-    System.out.print("Aukeratu fitxa zenbakia: ");
-    return scanner.nextInt();
+        System.out.print("Aukeratu fitxa zenbakia: ");
+        return scanner.nextInt();
     }
 }

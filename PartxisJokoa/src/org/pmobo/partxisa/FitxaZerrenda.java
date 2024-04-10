@@ -8,4 +8,7 @@ class FitxaZerrenda {
     public Iterator<Fitxa> getIterator() {
         return fitxaZerrenda.iterator();
     }
+    public int fitxarenPosizioa(Fitxa pFitxa) {
+        return pFitxa.fitxarenPosizioa();
+    }
 }
