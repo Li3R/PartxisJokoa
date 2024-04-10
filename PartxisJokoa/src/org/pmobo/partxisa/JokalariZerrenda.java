@@ -16,8 +16,7 @@ class JokalariZerrenda {
     // Implementación de métodos para gestionar la lista de jugadores
     // ...
 
-    public void repartirTurnos() {
+    public void txandakBanatu() {
         // Implementación para repartir los turnos entre los jugadores
     }
-//holadsdhbchshb
 }
