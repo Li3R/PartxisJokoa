@@ -3,7 +3,7 @@ class JokalariZerrenda {
     private ArrayList<Jokalari> jokalariak;
 
     private JokalariZerrenda() {
-        jokalariak = new ArrayList<Jokalari();
+        jokalariak = new ArrayList<Jokalari>();
     }
 
     public static JokalariZerrenda getNireJokalariZerrenda() {

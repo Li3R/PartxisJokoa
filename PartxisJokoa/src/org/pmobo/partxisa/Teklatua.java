@@ -6,8 +6,8 @@ class Teklatua {
         scanner = new Scanner(System.in);
     }
 
-    public String pedirNombre() {
-        System.out.print("Introduce tu nombre: ");
+    public String IzenaEskatu() {
+        System.out.print("Zure izena sartu: ");
         return scanner.nextLine();
     }
 }
