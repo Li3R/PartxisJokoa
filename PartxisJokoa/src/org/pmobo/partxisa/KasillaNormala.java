@@ -1,5 +1,6 @@
-public class KasillaNormala extends Kasilla {
-    public KasillaNormala(boolean fitxaDago, int kasillaPos) {
-        super(fitxaDago, kasillaPos);
+class EtxekoKasilla extends Kasilla {
+    public EtxekoKasilla(boolean pFitxaDago, int pKasillaPos) {
+        super(pFitxaDago, pKasillaPos);
+
     }
 }
