@@ -12,4 +12,4 @@ public class Fitxa {
 	}
 }
 //hola
-//ARRIAGA PUTERO
+//ARRIAGA PUTERO y hola
