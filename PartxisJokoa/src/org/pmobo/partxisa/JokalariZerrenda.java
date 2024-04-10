@@ -19,4 +19,5 @@ class JokalariZerrenda {
     public void repartirTurnos() {
         // Implementación para repartir los turnos entre los jugadores
     }
+//holadsdhbchshb
 }
