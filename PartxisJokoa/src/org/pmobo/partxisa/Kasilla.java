@@ -6,4 +6,7 @@ class Kasilla {
         this.fitxaDago = pFitxaDago;
         this.kasillaPos = pKasillaPos;
     }
+    public int getKasillaPos() {
+        return kasillaPos;
+    }
 }

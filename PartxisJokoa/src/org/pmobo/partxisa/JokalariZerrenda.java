@@ -13,10 +13,23 @@ class JokalariZerrenda {
         return nireJokalariZerrenda;
     }
 
-    // Implementación de métodos para gestionar la lista de jugadores
-    // ...
+    public Iterator<Jokalaria> getIterator() {
+        return jokalariak.iterator();
+    }
+    
+    
+}
+public void crearJokalariak() {
+    Teklatua teklatua = Teklatua.getNireTeklatua();
+    int numJugadores = teklatua.jokalariKopuruaEskatu();
 
-    public void txandakBanatu() {
-        // Implementación para repartir los turnos entre los jugadores
+    Iterator<Jokalaria> iterator = jokalariak.iterator();
+    int i = 0;
+    while (iterator.hasNext() && i < numJugadores) {
+        Jokalaria jokalaria = iterator.next();
+        i++;
+        System.out.print("Introduce el nombre del jugador " + i + ": ");
+        String izena = teklatua.IzenaEskatu();
+        jokalaria.setIzena(izena);
     }
 }
