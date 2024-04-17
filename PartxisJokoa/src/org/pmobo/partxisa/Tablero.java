@@ -22,4 +22,7 @@ class Tablero {
         }
     }
     
+    public void partidaJokatu() {
+        JokalariZerrenda.getNireJokalariZerrenda().jokalariakSortu().jokatu();
+    }
 }

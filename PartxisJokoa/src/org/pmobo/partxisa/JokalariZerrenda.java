@@ -24,14 +24,25 @@ class JokalariZerrenda {
     public void jokalariakSortu() {
         Teklatua teklatua = Teklatua.getNireTeklatua();
         int numJukalariak = teklatua.jokalariKopuruaEskatu();
-        Iterator<Jokalaria> itr = jokalariak.iterator();
         int i = 0;
-        while (itr.hasNext() && i < numJokalariak) {
-            Jokalaria jokalaria = itr.next();
-            i++;
+        while (i < numJokalariak) {
+            Jokalaria jokalaria = new Jokalaria();
             System.out.print("Jokalari " + i + " :");
             String izena = teklatua.izenaEskatu();
             jokalaria.setIzena(izena);
+            jokalariak.add(jokalaria);
+            i++;
+        }
+    }
+
+    public void jokatu() {
+        Iterator<Jokalaria> itr = jokalariak.iterator();
+        while (itr.hasNext()) {
+            Jokalaria jokalaria = itr.next();
+            int posizioa = jokalaria.dadoaBota();
+            Jokalaria fitxa = jokalaria.fitxarenPosizioa();
+            fitxa = posizioa;
+            System.out.println("Jokalaria: " + jokalaria.getIzena() + ", Posizioa: " + jokalaria.fitxarenPosizioa());
         }
     }
 }
