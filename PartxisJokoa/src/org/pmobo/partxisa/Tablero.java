@@ -18,28 +18,18 @@ class Tablero {
     }
 
     public void tableroaSortu() {
-        Jokalaria jokalaria1 = Jokalaria.getJokalaria();
-        Jokalaria jokalaria2 = Jokalaria.getJokalaria();
-        Iterator<Kasilla> itr = getIterator();
-        while (itr.hasNext() && kasillaZerrenda.size() < 68){
-            Kasilla kasilla = itr.next();
-            // Do something with each Kasilla object
-        }
-    }
+        kasillaZerrenda = new ArrayList<Kasilla>();
 
-    public void tabletoaInprimatu() {
-        Iterator<Kasilla> itr = getIterator();
-        while (itr.hasNext()) {
-            Kasilla kasilla = itr.next();
-            System.out.println("Kasilla zenbakia: " + kasilla.kasillaPos);
-            if (kasilla.fitxaDago) {
-                System.out.println("Fitxa bat dago");
-            }
+        for (int i = 0; i < 68; i++) {
+            kasillaZerrenda.add(new Kasilla(false, i));
         }
-    }
-    public void fitxaMugitu(Fitxa pFitxa) {
-        Dadoa dadoa = new Dadoa();
-        int dadoaBota = dadoa.bota();
-        pFitxa.fitxaMugitu(dadoaBota);
     }
 }
+
+
+public void jokatu(){
+    jokalari1= new Jokalaria("Bot");
+    jokalari2= new Jokalaria("Asier");
+
+}
+
