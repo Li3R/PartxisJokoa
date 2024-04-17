@@ -1,10 +1,17 @@
 class KasillaFinala extends Kasilla {
-    public Final(boolean pFitxaDago, int pKasillaPos) {
+    private String kolorea;
+    public Final(boolean pFitxaDago, int pKasillaPos, String pKolorea) {
         super(pFitxaDago, pKasillaPos);
+        this.kolorea = pKolorea;
 
     }
 
-    public void kasillaMota() {
-        // Code for the shared method goes here
+    public boolean amaitu(String pKolorea) {
+        boolean amaitu = false;
+        if (kolorea.equals(pKolorea)) {
+            amaitu = true;
+        }
+        return amaitu; 
     }
 }
+        

@@ -4,7 +4,7 @@ class EtxekoKasilla extends Kasilla {
 
     }
 
-    public void kasillaMota() {
-        // Code for the shared method goes here
+    public void jan() {
+    return false;    
     }
 }
