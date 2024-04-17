@@ -1,3 +1,6 @@
+import org.pmobo.partxisa;
+import java.util.Scanner;
+
 class Teklatua {
     private Scanner scanner;
 

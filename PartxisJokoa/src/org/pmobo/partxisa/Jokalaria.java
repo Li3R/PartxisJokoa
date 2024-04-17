@@ -1,4 +1,6 @@
-import java.util.random;
+import org.pmobo.partxisa;
+import java.util.Random;
+
 class Jokalaria {
     private Fitxa fitxa;
     private String izena;

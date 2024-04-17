@@ -1,9 +1,11 @@
-class Kasilla {
+package org.pmobo.partxisa;
+
+public class Kasilla {
     private int kasillaNum;
     private Fitxa fitxa;
 
     public Kasilla(int pKasillaNum, Fitxa pFitxa) {
-        this.kasillaPos = pKasillaPos;
+        this.kasillaNum = pKasillaNum;
         this.fitxa = pFitxa;
     }
 

@@ -1,3 +1,5 @@
+import org.pmobo.partxisa;
+
 class Tablero {
     private static Tablero nireTablero = null;
     private ArrayList<Kasilla> kasillaZerrenda;

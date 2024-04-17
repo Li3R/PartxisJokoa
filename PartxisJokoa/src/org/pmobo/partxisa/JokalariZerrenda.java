@@ -1,3 +1,7 @@
+import org.pmobo.partxisa;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 class JokalariZerrenda {
     private static JokalariZerrenda nireJokalariZerrenda = null;
     private ArrayList<Jokalaria> jokalariak;
