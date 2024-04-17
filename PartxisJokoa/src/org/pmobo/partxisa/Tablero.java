@@ -30,8 +30,16 @@ class Tablero {
             if (kasilla.fitxaDago) {
                 System.out.println("Kasilla honetan fitxa bat dago");
             }
+            if (kasilla instanceof KasillaNormala) {
+                System.out.println("Kasilla normala");
+            } else if (kasilla instanceof KasillaFinala) {
+                System.out.println("Kasilla Finala");
+            } else if (kasilla instanceof BabesKasilla) {
+                System.out.println("Babes kasilla");
+            } else if (kasilla instanceof EtxekoKasilla) {
+                System.out.println("Etxeko kasilla");
+            }
         
         }
-    
     }
 }
