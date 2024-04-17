@@ -9,6 +9,10 @@ class Teklatua {
         System.out.print("Zure izena sartu: ");
         return scanner.nextLine();
     }
+    public int jokalariKopuruAukeratu() {
+        System.out.print("Jokalari kopurua aukeratu: ");
+        return scanner.nextInt();
+    }
     public int fitxaAukeratu() {
         System.out.print("Aukeratu fitxa zenbakia: ");
         return scanner.nextInt();
