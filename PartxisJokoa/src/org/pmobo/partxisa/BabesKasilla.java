@@ -3,5 +3,8 @@ public class BabesKasilla extends Kasilla {
         super(pFitxaDago, pKasillaPos);
     }
     
+    public void kasillaMota() {
+        // Code for the shared method goes here
+    }
 }
 
