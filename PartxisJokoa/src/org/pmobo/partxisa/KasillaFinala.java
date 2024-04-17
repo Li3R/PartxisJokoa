@@ -8,7 +8,7 @@ class KasillaFinala extends Kasilla {
 
     public boolean amaitu(String pKolorea) {
         boolean amaitu = false;
-        if (kolorea.equals(pKolorea)) {
+        if (this.kolorea == pKolorea) {
             amaitu = true;
         }
         return amaitu; 
