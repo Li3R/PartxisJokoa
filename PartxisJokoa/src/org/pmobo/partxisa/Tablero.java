@@ -42,4 +42,7 @@ class Tablero {
         
         }
     }
+    public void fitxaMugitu(int pKasillaPos, Fitxa pFitxa) {
+        
+    }
 }
