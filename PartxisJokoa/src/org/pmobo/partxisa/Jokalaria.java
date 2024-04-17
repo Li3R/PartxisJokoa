@@ -8,9 +8,10 @@ class Jokalaria {
     }
     public int dadoaBota(){
         int dadoa = (int) (Math.random() * 6) + 1;
-        return dadoa;
+        int posFitxa=Fitxa.fitxarenPosizioa()+dadoa;
+        return posFitxa;
     }
-    public void fitxaAukeratu(){
+   /* public void fitxaAukeratu(){
         Teklatua t = new Teklatua();
         Boolean aurkitua = false;
         Iterator<Fitxa> itr = fitxak.getIterator();
@@ -28,5 +29,9 @@ class Jokalaria {
             return null;
         }
         
+    } */
+    public void setIzena(String pIzena) {
+        this.izena = pIzena;
     }
 }
+
