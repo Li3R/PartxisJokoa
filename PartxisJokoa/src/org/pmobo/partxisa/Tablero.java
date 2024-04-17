@@ -26,7 +26,11 @@ class Tablero {
         Iterator<Kasilla> itr = getIterator();
         while (itr.hasNext()) {
             Kasilla kasilla = itr.next();
-            System.out.println("Kasilla zenbakia: " + kasilla.kasillaPos + "Fitxarik dago? " + kasilla.fitxaDago);
+            System.out.println("Kasilla zenbakia: " + kasilla.kasillaPos);
+            if (kasilla.fitxaDago) {
+                System.out.println("Kasilla honetan fitxa bat dago");
+            }
+        
         }
     
     }
