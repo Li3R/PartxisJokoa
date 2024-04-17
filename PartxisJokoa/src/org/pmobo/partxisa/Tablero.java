@@ -18,7 +18,7 @@ class Tablero {
     }
 
     public void tableroaSortu() {
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < 68; i++) {
             kasillaZerrenda.add(new Kasilla(false, i));
         }
     }
