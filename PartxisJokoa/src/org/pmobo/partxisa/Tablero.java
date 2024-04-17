@@ -22,4 +22,12 @@ class Tablero {
             kasillaZerrenda.add(new Kasilla(false, i));
         }
     }
+    public void tabletoaInprimatu() {
+        Iterator<Kasilla> itr = getIterator();
+        while (itr.hasNext()) {
+            Kasilla kasilla = itr.next();
+            System.out.println("Kasilla zenbakia: " + kasilla.kasillaPos + "Fitxarik dago? " + kasilla.fitxaDago);
+        }
+    
+    }
 }
