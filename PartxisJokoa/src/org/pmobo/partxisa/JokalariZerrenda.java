@@ -17,19 +17,17 @@ class JokalariZerrenda {
         return jokalariak.iterator();
     }
     
-    
-}
-public void crearJokalariak() {
-    Teklatua teklatua = Teklatua.getNireTeklatua();
-    int numJugadores = teklatua.jokalariKopuruaEskatu();
-
-    Iterator<Jokalaria> iterator = jokalariak.iterator();
-    int i = 0;
-    while (iterator.hasNext() && i < numJugadores) {
-        Jokalaria jokalaria = iterator.next();
-        i++;
-        System.out.print("Introduce el nombre del jugador " + i + ": ");
-        String izena = teklatua.IzenaEskatu();
-        jokalaria.setIzena(izena);
+    public void jokalariakSortu() {
+        Teklatua teklatua = Teklatua.getNireTeklatua();
+        int numJukalariak = teklatua.jokalariKopuruaEskatu();
+        Iterator<Jokalaria> itr = jokalariak.iterator();
+        int i = 0;
+        while (itr.hasNext() && i < numJokalariak) {
+            Jokalaria jokalaria = itr.next();
+            i++;
+            System.out.print("Jokalari " + i + " :");
+            String izena = teklatua.izenaEskatu();
+            jokalaria.setIzena(izena);
+        }
     }
 }

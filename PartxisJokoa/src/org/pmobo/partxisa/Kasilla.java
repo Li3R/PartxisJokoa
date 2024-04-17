@@ -1,9 +1,17 @@
 class Kasilla {
-    private boolean fitxaDago;
-    private int kasillaPos;
+    private int kasillaNum;
+    private Fitxa fitxa;
 
-    public Kasilla(boolean pFitxaDago, int pKasillaPos) {
-        this.fitxaDago = pFitxaDago;
+    public Kasilla(int pKasillaNum, Fitxa pFitxa) {
         this.kasillaPos = pKasillaPos;
+        this.fitxa = pFitxa;
+    }
+
+    public int getKasillaNum() {
+        return this.kasillaNum;
+    }
+
+    public Fitxa getFitxa() {
+        return this.fitxa;
     }
 }
