@@ -18,6 +18,8 @@ class Tablero {
     }
 
     public void tableroaSortu() {
+        Jokalaria jokalaria1 = Jokalaria.getJokalaria();
+        Jokalaria jokalaria2 = Jokalaria.getJokalaria();
         Iterator<Kasilla> itr = getIterator();
         while (itr.hasNext() && kasillaZerrenda.size() < 68){
             Kasilla kasilla = itr.next();
