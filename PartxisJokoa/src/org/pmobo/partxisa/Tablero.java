@@ -42,7 +42,9 @@ class Tablero {
         
         }
     }
-    public void fitxaMugitu(int pKasillaPos, Fitxa pFitxa) {
-        
+    public void fitxaMugitu(Fitxa pFitxa) {
+        Dadoa dadoa = new Dadoa();
+        int dadoaBota = dadoa.bota();
+        pFitxa.fitxaMugitu(dadoaBota);
     }
 }

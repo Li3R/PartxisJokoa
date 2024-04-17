@@ -14,5 +14,8 @@ public class Fitxa {
 	public int fitxarenPosizioa() {
 		return this.pos;
 	}
+	public void fitxaMugitu(int pDadoaBota) {
+		this.pos = this.pos + pDadoaBota;
+	}
 }
 
