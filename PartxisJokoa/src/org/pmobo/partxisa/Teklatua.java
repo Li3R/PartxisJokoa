@@ -17,4 +17,15 @@ class Teklatua {
         System.out.print("Aukeratu fitxa zenbakia: ");
         return scanner.nextInt();
     }
+    public int jokalariKopuruaEskatu() {
+        System.out.print("Sartu jokalari kopurua: ");
+        return scanner.nextInt();
+    }
+
+    public void eskatuIzena() {
+        System.out.print("Sartu izena: ");
+        String izena = scanner.nextLine();
+        
+    }
 }
+
