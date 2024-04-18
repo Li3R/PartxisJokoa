@@ -1,8 +1,9 @@
-import org.pmobo.partxisa;
+package org.pmobo.partxisa;
+import java.util.*;
 
 class Tablero {
     private static Tablero nireTablero = null;
-    private ArrayList<Kasilla> kasillaZerrenda;
+    private ArrayList<Kasilla> tablero;
 
     private Tablero() {
         tablero = new ArrayList<Kasilla>();
@@ -17,12 +18,12 @@ class Tablero {
 
     public void tableroaSortu() {
         for (int i = 0; i < 68; i++) {
-            Kasilla kasilla = new Kasilla();
+            Kasilla kasilla = new Kasilla(); //Amaitu
             tablero.add(kasilla);
         }
     }
     
     public void partidaJokatu() {
-        JokalariZerrenda.getNireJokalariZerrenda().jokalariakSortu().jokatu();
+    	//to do.
     }
 }

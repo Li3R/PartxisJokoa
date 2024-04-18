@@ -1,6 +1,5 @@
-import org.pmobo.partxisa;
-import java.util.ArrayList;
-import java.util.Iterator;
+package org.pmobo.partxisa;
+import java.util.*;
 
 class JokalariZerrenda {
     private static JokalariZerrenda nireJokalariZerrenda = null;
@@ -22,14 +21,15 @@ class JokalariZerrenda {
     }
     
     public void jokalariakSortu() {
-        Teklatua teklatua = Teklatua.getNireTeklatua();
-        int numJukalariak = teklatua.jokalariKopuruaEskatu();
+        Teklatua teklatua = Teklatua.getTeklatua();
+        int numJokalariak = teklatua.jokalariKopuruaEskatu();
         int i = 0;
+        int pPos = 0;
         while (i < numJokalariak) {
-            Jokalaria jokalaria = new Jokalaria();
             System.out.print("Jokalari " + i + " :");
-            String izena = teklatua.izenaEskatu();
-            jokalaria.setIzena(izena);
+            String pIzena = teklatua.eskatuIzena();
+            Fitxa pFitxa = new Fitxa(pPos);
+            Jokalaria jokalaria = new Jokalaria(pIzena,pFitxa);
             jokalariak.add(jokalaria);
             i++;
         }
@@ -39,10 +39,10 @@ class JokalariZerrenda {
         Iterator<Jokalaria> itr = jokalariak.iterator();
         while (itr.hasNext()) {
             Jokalaria jokalaria = itr.next();
-            int posizioa = jokalaria.dadoaBota();
-            Jokalaria fitxa = jokalaria.fitxarenPosizioa();
-            fitxa = posizioa;
             System.out.println("Jokalaria: " + jokalaria.getIzena() + ", Posizioa: " + jokalaria.fitxarenPosizioa());
+            int posizioa = jokalaria.dadoaBota();
+            jokalaria.getFitxa().setPos(posizioa);
+            System.out.println("Posizio berria: " + posizioa);
         }
     }
 }

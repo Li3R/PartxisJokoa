@@ -1,5 +1,4 @@
-import org.pmobo.partxisa;
-import java.util.Random;
+package org.pmobo.partxisa;
 
 class Jokalaria {
     private Fitxa fitxa;
@@ -9,14 +8,23 @@ class Jokalaria {
         this.izena = pIzena;
         this.fitxa = pFitxa;
     }
+    
     public int dadoaBota(){
         int dadoa = (int) (Math.random() * 6) + 1;
-        int posFitxa = this.fitxa.fitxarenPosizioa() + dadoa;
+        System.out.println("Dadoa: " + dadoa);
+        int posFitxa = this.fitxa.fitxarenPosizioa();
         return posFitxa;
     }
-
-    public void setIzena(String pIzena) {
-        this.izena = pIzena;
+    
+    public String getIzena() {
+    	return this.izena;
+    }
+    
+    public Fitxa getFitxa() {
+    	return this.fitxa;
+    }
+    
+    public int fitxarenPosizioa() {
+    	return this.fitxa.fitxarenPosizioa();
     }
 }
-
