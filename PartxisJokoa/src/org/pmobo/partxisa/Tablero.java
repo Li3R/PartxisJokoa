@@ -1,9 +1,12 @@
+package org.pmobo.partxisa;
+import java.util.*;
+
 class Tablero {
     private static Tablero nireTablero = null;
-    private ArrayList<Kasilla> kasillaZerrenda;
+    private ArrayList<Kasilla> tablero;
 
     private Tablero() {
-        casillas = new ArrayList<Kasilla>();
+        tablero = new ArrayList<Kasilla>();
     }
 
     public static Tablero getTablero() {
@@ -11,10 +14,6 @@ class Tablero {
             nireTablero = new Tablero();
         }
         return nireTablero;
-    }
-
-    public Iterator<kasilla> getIterator() {
-        return kasillaZerrenda.iterator();
     }
 
     public void tableroaSortu() {

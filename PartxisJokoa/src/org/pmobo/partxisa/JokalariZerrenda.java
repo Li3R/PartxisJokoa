@@ -1,3 +1,6 @@
+package org.pmobo.partxisa;
+import java.util.*;
+
 class JokalariZerrenda {
     private static JokalariZerrenda nireJokalariZerrenda = null;
     private ArrayList<Jokalaria> jokalariak;
@@ -17,19 +20,29 @@ class JokalariZerrenda {
         return jokalariak.iterator();
     }
     
-    
-}
-public void crearJokalariak() {
-    Teklatua teklatua = Teklatua.getNireTeklatua();
-    int numJugadores = teklatua.jokalariKopuruaEskatu();
+    public void jokalariakSortu() {
+        Teklatua teklatua = Teklatua.getTeklatua();
+        int numJokalariak = teklatua.jokalariKopuruaEskatu();
+        int i = 0;
+        int pPos = 0;
+        while (i < numJokalariak) {
+            System.out.print("Jokalari " + i + " :");
+            String pIzena = teklatua.eskatuIzena();
+            Fitxa pFitxa = new Fitxa(pPos);
+            Jokalaria jokalaria = new Jokalaria(pIzena,pFitxa);
+            jokalariak.add(jokalaria);
+            i++;
+        }
+    }
 
-    Iterator<Jokalaria> iterator = jokalariak.iterator();
-    int i = 0;
-    while (iterator.hasNext() && i < numJugadores) {
-        Jokalaria jokalaria = iterator.next();
-        i++;
-        System.out.print("Introduce el nombre del jugador " + i + ": ");
-        String izena = teklatua.IzenaEskatu();
-        jokalaria.setIzena(izena);
+    public void jokatu() {
+        Iterator<Jokalaria> itr = jokalariak.iterator();
+        while (itr.hasNext()) {
+            Jokalaria jokalaria = itr.next();
+            System.out.println("Jokalaria: " + jokalaria.getIzena() + ", Posizioa: " + jokalaria.fitxarenPosizioa());
+            int posizioa = jokalaria.dadoaBota();
+            jokalaria.getFitxa().setPos(posizioa);
+            System.out.println("Posizio berria: " + posizioa);
+        }
     }
 }
