@@ -19,16 +19,16 @@ public class Kasilla {
         return this.okupatuta;
     }
 
-    public void ponerFitxa(Fitxa fitxa) {
+    public void fitxaJarri(Fitxa fitxa) {
         this.fitxa = fitxa;
         this.okupatuta = true;
     }
 
-    public Fitxa obtenerFitxa() {
+    public Fitxa fitxaLortu() {
         return this.fitxa;
     }
 
-    public void vaciarCasilla() {
+    public void kasillaHustu() {
         this.fitxa = null;
         this.okupatuta = false;
     }
