@@ -18,12 +18,12 @@ class Tablero {
 
     public void tableroaSortu() {
         for (int kasillaNum = 0; kasillaNum < 68; kasillaNum++) {
-            Kasilla kasilla = new Kasilla(???,kasillaNum);
+            Kasilla kasilla = new Kasilla(kasillaNum,false,null);
             tablero.add(kasilla);
         }
     }
     
     public void partidaJokatu() {
-    	//to do.
+    	
     }
 }
