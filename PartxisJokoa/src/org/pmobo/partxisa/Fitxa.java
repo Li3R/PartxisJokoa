@@ -11,7 +11,9 @@ public class Fitxa {
 		return this.pos;
 	}
 	
-    public void setPos(int pPos) {
+    public int setPos(int pPos) {
         this.pos = pPos;
+		return this.pos;
     }
+
 }

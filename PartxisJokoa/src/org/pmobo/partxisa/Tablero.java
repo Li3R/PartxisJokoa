@@ -24,6 +24,9 @@ class Tablero {
     }
     
     public void partidaJokatu() {
-    	
+        jk = JokalariZerrenda.getNireJokalariZerrenda().jokalariakSortu();
+        while((tablero.size() - 1) != null) {
+           jk. 
+        }
     }
 }

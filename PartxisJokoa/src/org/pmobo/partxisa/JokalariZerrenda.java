@@ -19,6 +19,10 @@ class JokalariZerrenda {
     public Iterator<Jokalaria> getIterator() {
         return jokalariak.iterator();
     }
+
+    public int fitxarenPosizioa() {
+        return this.jokalariak.fitxarenPosizioa();
+    }
     
     public void jokalariakSortu() {
         Teklatua teklatua = Teklatua.getTeklatua();
@@ -35,14 +39,23 @@ class JokalariZerrenda {
         }
     }
 
-    public void jokatu() {
+    public void jokalariaAukeratu() {
         Iterator<Jokalaria> itr = jokalariak.iterator();
         while (itr.hasNext()) {
-            Jokalaria jokalaria = itr.next();
-            System.out.println("Jokalaria: " + jokalaria.getIzena() + ", Posizioa: " + jokalaria.fitxarenPosizioa());
-            int posizioa = jokalaria.dadoaBota();
-            jokalaria.getFitxa().setPos(posizioa);
-            System.out.println("Posizio berria: " + posizioa);
+            Jokalaria jk = itr.next();
+            System.out.println("TXANDA: " + jk.getIzena());
+            System.out.println("Posizioa: " + jk.fitxarenPosizioa());
+            int dadoa = jk.dadoaBota();
+            System.out.println("Dadoa: " + dadoa);
+            int posFitxa = jk.getFitxa().setPos(dadoa);
+            System.out.println("POSIZIOA BERRIA: " + posFitxa);
+            System.out.println("___________________________________________________________");
+            if (jk.fitxarenPosizioa() == 68) {
+                break;
+            }
+            if (!itr.hasNext()) {
+                itr = jokalariak.iterator();
+            }
         }
     }
 }
