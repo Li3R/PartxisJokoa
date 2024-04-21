@@ -11,11 +11,32 @@ class Jokalaria {
     
     public int dadoaBota(){
         int dadoa = (int) (Math.random() * 6) + 1;
-        System.out.println("Dadoa: " + dadoa);
-        int posFitxa = this.fitxa.fitxarenPosizioa();
+        int posFitxa=Fitxa.fitxarenPosizioa()+dadoa;
         return posFitxa;
     }
-    
+   /* public void fitxaAukeratu(){
+        Teklatua t = new Teklatua();
+        Boolean aurkitua = false;
+        Iterator<Fitxa> itr = fitxak.getIterator();
+        Fitxa f1 == t.fitxaAukeratu();
+        while (!aurkitua && itr.hasNext()) {
+            Fitxa f2 = itr.next();
+            if (f1 == f2) {
+                aurkitua = true;
+            }
+        }
+        if (aurkitua) {
+            return f2;
+        } else {
+            System.out.println("Fitxa ez da aurkitu");
+            return null;
+        }
+        
+    } */
+    public void setIzena(String pIzena) {
+        this.izena = pIzena;
+    }
+
     public String getIzena() {
     	return this.izena;
     }
@@ -28,3 +49,5 @@ class Jokalaria {
     	return this.fitxa.fitxarenPosizioa();
     }
 }
+
+   

@@ -1,19 +1,35 @@
 package org.pmobo.partxisa;
 
 public class Kasilla {
-    private int kasillaNum;
+    private int numKasilla;
+    private boolean okupatuta;
     private Fitxa fitxa;
 
-    public Kasilla(int pKasillaNum, Fitxa pFitxa) {
-        this.kasillaNum = pKasillaNum;
-        this.fitxa = pFitxa;
+    public Kasilla(int numKasilla, boolean okupatuta, Fitxa fitxa) {
+        this.numKasilla = numKasilla;
+        this.okupatuta = okupatuta;
+        this.fitxa = fitxa;
     }
 
-    public int getKasillaNum() {
-        return this.kasillaNum;
+    public int getNumKasilla() {
+        return this.numKasilla;
     }
 
-    public Fitxa getFitxa() {
+    public boolean okupatutaDago() {
+        return this.okupatuta;
+    }
+
+    public void ponerFitxa(Fitxa fitxa) {
+        this.fitxa = fitxa;
+        this.okupatuta = true;
+    }
+
+    public Fitxa obtenerFitxa() {
         return this.fitxa;
+    }
+
+    public void vaciarCasilla() {
+        this.fitxa = null;
+        this.okupatuta = false;
     }
 }
