@@ -17,8 +17,8 @@ class Tablero {
     }
 
     public void tableroaSortu() {
-        for (int i = 0; i < 68; i++) {
-            Kasilla kasilla = new Kasilla(); //Amaitu
+        for (int kasillaNum = 0; kasillaNum < 68; kasillaNum++) {
+            Kasilla kasilla = new Kasilla(???,kasillaNum);
             tablero.add(kasilla);
         }
     }
