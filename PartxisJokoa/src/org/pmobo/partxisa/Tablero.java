@@ -17,18 +17,13 @@ class Tablero {
     }
 
     public void tableroaSortu() {
-        kasillaZerrenda = new ArrayList<Kasilla>();
-
-        for (int i = 0; i < 68; i++) {
-            kasillaZerrenda.add(new Kasilla(false, i));
+        for (int kasillaNum = 0; kasillaNum < 68; kasillaNum++) {
+            Kasilla kasilla = new Kasilla(???,kasillaNum);
+            tablero.add(kasilla);
         }
     }
+    
+    public void partidaJokatu() {
+    	//to do.
+    }
 }
-
-
-public void jokatu(){
-    jokalari1= new Jokalaria("Bot");
-    jokalari2= new Jokalaria("Asier");
-
-}
-
