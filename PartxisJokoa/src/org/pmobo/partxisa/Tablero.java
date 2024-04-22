@@ -18,21 +18,28 @@ class Tablero {
 
     public void tableroaSortu() {
         for (int kasillaNum = 0; kasillaNum < 68; kasillaNum++) {
-            Kasilla kasilla = new Kasilla(kasillaNum,false,null);
+            Kasilla kasilla = new Kasilla(kasillaNum, null);
             tablero.add(kasilla);
         }
     }
     
     public void partidaJokatu() {
+        this.tableroaSortu();
         JokalariZerrenda.getNireJokalariZerrenda().jokalariakSortu();
-        int tableroTamaina = tablero.size();
+        boolean partidaAmaituta = false;
         
-        while (true) {
-            if (tableroTamaina > 0 && !tablero.get(tableroTamaina - 1).okupatutaDago() == false) {
+        while (!partidaAmaituta) {
+            boolean todosEnUltimaCasilla = true;
+            for (Jokalaria jokalaria : JokalariZerrenda.getNireJokalariZerrenda().getJokalariak()) {
+                if (jokalaria.fitxarenPosizioa() != 67) {
+                    todosEnUltimaCasilla = false;
+                    break; // Si al menos un jugador no está en la última casilla, no es necesario continuar verificando
+                }
+            }
+            if (todosEnUltimaCasilla) {
+                partidaAmaituta = true;
+            } else {
                 JokalariZerrenda.getNireJokalariZerrenda().jokalariaAukeratu();
-            } 
-            else {
-                break;
             }
         }
     }
