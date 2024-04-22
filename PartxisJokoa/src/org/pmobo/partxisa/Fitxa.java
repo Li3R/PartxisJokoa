@@ -11,9 +11,8 @@ public class Fitxa {
 		return this.pos;
 	}
 	
-    public int setPos(int pPos) {
-        this.pos = pPos;
-		return this.pos;
+    public int posizioaAldatu(int pPos) {
+        int posizioBerria = this.fitxarenPosizioa() + pPos;
+		return posizioBerria;
     }
-
 }
