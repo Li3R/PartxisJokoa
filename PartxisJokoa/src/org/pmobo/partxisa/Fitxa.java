@@ -10,9 +10,4 @@ public class Fitxa {
 	public int fitxarenPosizioa() {
 		return this.pos;
 	}
-	
-    public int posizioaAldatu(int pPos) {
-        int posizioBerria = this.fitxarenPosizioa() + pPos;
-		return posizioBerria;
-    }
 }
