@@ -11,9 +11,7 @@ class Jokalaria {
     
     public int dadoaBota(){
         int dadoa = (int) (Math.random() * 6) + 1;
-        System.out.println("Dadoa: " + dadoa);
-        int posFitxa = this.fitxa.fitxarenPosizioa();
-        return posFitxa;
+        return dadoa;
     }
     
     public String getIzena() {
@@ -26,5 +24,13 @@ class Jokalaria {
     
     public int fitxarenPosizioa() {
     	return this.fitxa.fitxarenPosizioa();
+    }
+    
+    public int posizioaAldatu() {
+    	return this.fitxarenPosizioa() + this.dadoaBota();
+    }
+    
+    public void printJokalari() {
+    	System.out.println(this.izena);
     }
 }
