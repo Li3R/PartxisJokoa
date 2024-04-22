@@ -16,43 +16,45 @@ class JokalariZerrenda {
         return nireJokalariZerrenda;
     }
 
-    public Iterator<Jokalaria> getIterator() {
-        return jokalariak.iterator();
+    public int jokalariKopEskatu() {
+    	Teklatua teklatua = Teklatua.getTeklatua();
+    	int jokalariKop = teklatua.jokalariKopuruaEskatu();
+    	return jokalariKop;
     }
     
     public void jokalariakSortu() {
+    	jokalariak.clear();
         Teklatua teklatua = Teklatua.getTeklatua();
-        int numJokalariak = teklatua.jokalariKopuruaEskatu();
-        int i = 0;
-        int pPos = 0;
-        while (i < numJokalariak) {
-            System.out.print("Jokalari " + i + " :");
-            String pIzena = teklatua.eskatuIzena();
-            Fitxa pFitxa = new Fitxa(pPos);
-            Jokalaria jokalaria = new Jokalaria(pIzena,pFitxa);
-            jokalariak.add(jokalaria);
-            i++;
+        int numJokalariak = jokalariKopEskatu();
+        for (int i = 1; i <= numJokalariak; i++) {
+        	System.out.println("Jokalari " + i + " :");
+        	String pIzena = teklatua.eskatuIzena();
+            Fitxa pFitxa = new Fitxa(0);
+            jokalariak.add(new Jokalaria(pIzena, pFitxa));
         }
     }
 
     public void jokalariaAukeratu() {
-        Iterator<Jokalaria> itr = jokalariak.iterator();
-        while (itr.hasNext()) {
-            Jokalaria jk = itr.next();
+        boolean partidaAmaituta = false;
+        int i = 0;
+        while (!partidaAmaituta) {
+            Jokalaria jk = jokalariak.get(i);
             System.out.println("TXANDA: " + jk.getIzena());
             System.out.println("Posizioa: " + jk.fitxarenPosizioa());
             int dadoa = jk.dadoaBota();
             System.out.println("Dadoa: " + dadoa);
-            int posFitxa = jk.getFitxa().posizioaAldatu(dadoa);
+            jk.posizioaAldatu();
+            int posFitxa = jk.fitxarenPosizioa();
             System.out.println("POSIZIOA BERRIA: " + posFitxa);
             System.out.println("___________________________________");
             if (posFitxa == 68) {
-                System.out.println(jk.getIzena() + "IRABAZLEA DA!!! Partida amaituta dago.");
-                break;
+                partidaAmaituta = true;
             }
-            if (!itr.hasNext()) {
-                itr = jokalariak.iterator();
+            i++;
+            if (i == jokalariak.size()) {
+                i = 0;
             }
+            Teklatua.getTeklatua().returnSakatu();
         }
     }
 }
