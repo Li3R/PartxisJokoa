@@ -16,14 +16,20 @@ class Teklatua {
         return nireTeklatua;
     }
     
+    public void returnSakatu() {
+        System.out.print("[Return sakatu]");
+        scanner.nextInt();
+    }
+    
     public int jokalariKopuruaEskatu() {
         System.out.print("Sartu jokalari kopurua: ");
         return scanner.nextInt();
     }
 
     public String eskatuIzena() {
-        System.out.print("Sartu izena: ");
+        System.out.println("Sartu izena: ");
         String izena = scanner.nextLine();
+        scanner.nextLine();
         return izena;
     }
 }
