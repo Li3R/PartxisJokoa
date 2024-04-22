@@ -1,35 +1,29 @@
 package org.pmobo.partxisa;
+import java.util.Scanner;
 
-public class Kasilla {
-    private int numKasilla;
-    private boolean okupatuta;
-    private Fitxa fitxa;
+class Teklatua {
+    private static Teklatua nireTeklatua;
+    private Scanner scanner;
 
-    public Kasilla(int numKasilla, boolean okupatuta, Fitxa fitxa) {
-        this.numKasilla = numKasilla;
-        this.okupatuta = okupatuta;
-        this.fitxa = fitxa;
+    private Teklatua() {
+        scanner = new Scanner(System.in);
+    }
+    
+    public static Teklatua getTeklatua() {
+        if (nireTeklatua == null) {
+            nireTeklatua = new Teklatua();
+        }
+        return nireTeklatua;
+    }
+    
+    public int jokalariKopuruaEskatu() {
+        System.out.print("Sartu jokalari kopurua: ");
+        return scanner.nextInt();
     }
 
-    public int getNumKasilla() {
-        return this.numKasilla;
-    }
-
-    public boolean okupatutaDago() {
-        return this.okupatuta;
-    }
-
-    public void fitxaJarri(Fitxa fitxa) {
-        this.fitxa = fitxa;
-        this.okupatuta = true;
-    }
-
-    public Fitxa fitxaLortu() {
-        return this.fitxa;
-    }
-
-    public void kasillaHustu() {
-        this.fitxa = null;
-        this.okupatuta = false;
+    public String eskatuIzena() {
+        System.out.print("Sartu izena: ");
+        String izena = scanner.nextLine();
+        return izena;
     }
 }
