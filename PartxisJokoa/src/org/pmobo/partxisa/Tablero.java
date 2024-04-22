@@ -24,9 +24,16 @@ class Tablero {
     }
     
     public void partidaJokatu() {
-        jk = JokalariZerrenda.getNireJokalariZerrenda().jokalariakSortu();
-        while((tablero.size() - 1) != null) {
-           jk. 
+        JokalariZerrenda.getNireJokalariZerrenda().jokalariakSortu();
+        int tableroTamaina = tablero.size();
+        
+        while (true) {
+            if (tableroTamaina > 0 && !tablero.get(tableroTamaina - 1).okupatutaDago() == false) {
+                JokalariZerrenda.getNireJokalariZerrenda().jokalariaAukeratu();
+            } 
+            else {
+                break;
+            }
         }
     }
 }
