@@ -13,7 +13,10 @@ public class Kasilla {
         return this.numKasilla;
     }
 
-    public boolean okupatutaDago() {
-        return this.numKasilla == this.fitxa.fitxarenPosizioa();
+    public boolean irabazleaDago() {
+    	if(this.fitxa != null) {
+    		return true;
+    	}
+    	return false;
     }
 }
