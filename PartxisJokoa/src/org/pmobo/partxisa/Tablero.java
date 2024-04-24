@@ -25,22 +25,7 @@ class Tablero {
     
     public void partidaJokatu() {
         this.tableroaSortu();
-        JokalariZerrenda.getNireJokalariZerrenda().jokalariakSortu();
-        boolean partidaAmaituta = false;
-        
-        while (!partidaAmaituta) {
-            boolean todosEnUltimaCasilla = true;
-            for (Jokalaria jokalaria : JokalariZerrenda.getNireJokalariZerrenda().getJokalariak()) {
-                if (jokalaria.fitxarenPosizioa() != 67) {
-                    todosEnUltimaCasilla = false;
-                    break; // Si al menos un jugador no está en la última casilla, no es necesario continuar verificando
-                }
-            }
-            if (todosEnUltimaCasilla) {
-                partidaAmaituta = true;
-            } else {
-                JokalariZerrenda.getNireJokalariZerrenda().jokalariaAukeratu();
-            }
-        }
+        JokalariZerrenda.getNireJokalariZerrenda().jokalariakSortu();        
+        JokalariZerrenda.getNireJokalariZerrenda().jokalariaAukeratu();
     }
 }
