@@ -29,7 +29,7 @@ class JokalariZerrenda {
         for (int i = 1; i <= numJokalariak; i++) {
         	System.out.println("Jokalari " + i + " :");
         	String pIzena = teklatua.eskatuIzena();
-            Fitxa pFitxa = new Fitxa(0);
+            Fitxa pFitxa = new Fitxa();
             jokalariak.add(new Jokalaria(pIzena, pFitxa));
         }
     }
@@ -37,24 +37,22 @@ class JokalariZerrenda {
     public void jokalariaAukeratu() {
         boolean partidaAmaituta = false;
         int i = 0;
+        
         while (!partidaAmaituta) {
             Jokalaria jk = jokalariak.get(i);
-            System.out.println("TXANDA: " + jk.getIzena());
-            System.out.println("Posizioa: " + jk.fitxarenPosizioa());
+            jk.printJokalari();
             int dadoa = jk.dadoaBota();
             System.out.println("Dadoa: " + dadoa);
-            jk.posizioaAldatu();
-            int posFitxa = jk.fitxarenPosizioa();
-            System.out.println("POSIZIOA BERRIA: " + posFitxa);
+            jk.setFitxarenPosizioa(dadoa);            
+            System.out.println("POSIZIOA BERRIA: " + jk.fitxarenPosizioa());
             System.out.println("___________________________________");
-            if (posFitxa == 68) {
+            if (jk.fitxarenPosizioa() >= 67) {
                 partidaAmaituta = true;
             }
             i++;
             if (i == jokalariak.size()) {
                 i = 0;
             }
-            Teklatua.getTeklatua().returnSakatu();
         }
     }
 }
