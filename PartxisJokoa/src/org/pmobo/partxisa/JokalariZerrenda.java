@@ -27,7 +27,7 @@ class JokalariZerrenda {
         Teklatua teklatua = Teklatua.getTeklatua();
         int numJokalariak = jokalariKopEskatu();
         for (int i = 1; i <= numJokalariak; i++) {
-        	System.out.println("Jokalari " + i + " :");
+        	System.out.println("Jokalari " + i + " , sartu izena:");
         	String pIzena = teklatua.eskatuIzena();
             Fitxa pFitxa = new Fitxa();
             jokalariak.add(new Jokalaria(pIzena, pFitxa));
@@ -35,24 +35,62 @@ class JokalariZerrenda {
     }
 
     public void jokalariaAukeratu() {
-        boolean partidaAmaituta = false;
-        int i = 0;
+        Teklatua teklatua = Teklatua.getTeklatua();
         
-        while (!partidaAmaituta) {
+        ArrayList<Jokalaria> amaierakoLista = new ArrayList<Jokalaria>();            
+        int i = 0;
+        while (!this.partidaAmaituta()) {
             Jokalaria jk = jokalariak.get(i);
-            jk.printJokalari();
+            System.out.println("TXANDA: " + jk.getIzena());
+            System.out.println("Posizioa: " + jk.fitxarenPosizioa());
             int dadoa = jk.dadoaBota();
+
+            if (dadoa != 5 && jk.fitxarenPosizioa() == 0) {
+                jk.setFitxarenPosizioa(0);
+            } else if (dadoa == 5 && jk.fitxarenPosizioa() == 0) {
+                jk.setFitxarenPosizioa(1);
+            } else {
+                jk.setFitxarenPosizioa(dadoa);
+            }
+            
+            int pos = jk.fitxarenPosizioa();
             System.out.println("Dadoa: " + dadoa);
-            jk.setFitxarenPosizioa(dadoa);            
-            System.out.println("POSIZIOA BERRIA: " + jk.fitxarenPosizioa());
+            System.out.println("POSIZIOA BERRIA: " + pos);
             System.out.println("___________________________________");
+            
+            Jokalaria hJokalari = jokalariak.get((i+1) % jokalariak.size());
+            System.out.println("HURRENGOA: " + hJokalari.getIzena());
+            teklatua.returnSakatu();
+          
+            
             if (jk.fitxarenPosizioa() >= 67) {
-                partidaAmaituta = true;
+                amaierakoLista.add(jk);
+                jokalariak.remove(i);
+                i--;
             }
+            
             i++;
-            if (i == jokalariak.size()) {
+            
+            if (i >= jokalariak.size()) {
                 i = 0;
-            }
+            } 
         }
+        
+        System.out.println("");
+        System.out.println("PARTIDA AMAITUTA, emaitzak:");
+        int j = 0;
+        while (j < amaierakoLista.size()) {
+            Jokalaria jk = amaierakoLista.get(j);
+            System.out.println((j + 1) + ". " + jk.getIzena() );
+            j++;
+        }
+    }
+    
+    public boolean partidaAmaituta() {
+    	boolean amaituta = false;
+        if (jokalariak.size() == 0) {
+            amaituta = true;
+        }
+        return amaituta;
     }
 }
