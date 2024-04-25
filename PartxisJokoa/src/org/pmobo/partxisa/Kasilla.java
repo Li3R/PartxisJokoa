@@ -12,11 +12,4 @@ public class Kasilla {
     public int getNumKasilla() {
         return this.numKasilla;
     }
-
-    public boolean irabazleaDago() {
-    	if(this.fitxa != null) {
-    		return true;
-    	}
-    	return false;
-    }
 }
