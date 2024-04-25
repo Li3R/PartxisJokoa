@@ -17,21 +17,12 @@ class Jokalaria {
     public String getIzena() {
         return this.izena;
     }
-    
-    public Fitxa getFitxa() {
-        return this.fitxa;
-    }
-    
+        
     public int fitxarenPosizioa() {
         return this.fitxa.fitxarenPosizioa();
     }
     
     public void setFitxarenPosizioa(int pDado) {
         this.fitxa.setFitxarenPosizioa(pDado);
-    }
-    
-    public void printJokalari() {
-        System.out.println("TXANDA: " + this.izena);
-        System.out.println("Posizioa: " + this.fitxarenPosizioa());
     }
 }
