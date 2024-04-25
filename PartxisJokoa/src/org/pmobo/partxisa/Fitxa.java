@@ -12,6 +12,12 @@ public class Fitxa {
 	}
 	
 	public void setFitxarenPosizioa(int pDado) {
-		this.pos = this.pos + pDado;		
+	    int posizioBerria = this.pos + pDado;
+	    if (posizioBerria > 67) {
+	        int gainontzekoa = posizioBerria - 67;
+	        this.pos = 67 - gainontzekoa;
+	    } else {
+	        this.pos = posizioBerria;
+	    }
 	}
 }
