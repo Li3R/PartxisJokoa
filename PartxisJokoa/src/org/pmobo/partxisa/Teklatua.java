@@ -18,7 +18,7 @@ class Teklatua {
     
     public void returnSakatu() {
         System.out.print("[Return sakatu]");
-        scanner.nextInt();
+        scanner.nextLine();
     }
     
     public int jokalariKopuruaEskatu() {
@@ -27,9 +27,9 @@ class Teklatua {
     }
 
     public String eskatuIzena() {
-        System.out.println("Sartu izena: ");
-        String izena = scanner.nextLine();
+        String izena = "";
         scanner.nextLine();
+        izena = scanner.next();
         return izena;
     }
 }
