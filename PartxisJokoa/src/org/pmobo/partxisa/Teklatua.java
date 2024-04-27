@@ -17,7 +17,11 @@ class Teklatua {
     }
     
     public void returnSakatu() {
-        System.out.print("[Return sakatu]");
+        System.out.println("[Return sakatu]");
+        scanner.nextLine();
+    }
+    
+    public void returnInbisiblea() {
         scanner.nextLine();
     }
     
