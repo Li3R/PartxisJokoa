@@ -39,9 +39,18 @@ class JokalariZerrenda {
         
         ArrayList<Jokalaria> amaierakoLista = new ArrayList<Jokalaria>();            
         int i = 0;
+        
+        System.out.println(" ");
+        System.out.println("PARTIDA HASI");
+        teklatua.returnInbisiblea();
+        Jokalaria hJokalari = jokalariak.get(i);
+        System.out.println("Hasten den jokalaria: " + hJokalari.getIzena());
+        teklatua.returnSakatu();
+
         while (!this.partidaAmaituta()) {
             Jokalaria jk = jokalariak.get(i);
-            System.out.println("TXANDA: " + jk.getIzena());
+
+            System.out.println(jk.getIzena());
             System.out.println("Posizioa: " + jk.fitxarenPosizioa());
             int dadoa = jk.dadoaBota();
 
@@ -52,18 +61,17 @@ class JokalariZerrenda {
             } else {
                 jk.setFitxarenPosizioa(dadoa);
             }
-            
+
             int pos = jk.fitxarenPosizioa();
             System.out.println("Dadoa: " + dadoa);
             System.out.println("POSIZIOA BERRIA: " + pos);
             System.out.println("___________________________________");
-            
-            Jokalaria hJokalari = jokalariak.get((i+1) % jokalariak.size());
+
+            hJokalari = jokalariak.get((i+1) % jokalariak.size());
             System.out.println("HURRENGOA: " + hJokalari.getIzena());
             teklatua.returnSakatu();
-          
-            
-            if (jk.fitxarenPosizioa() >= 67) {
+                                  
+            if (jk.fitxarenPosizioa() >= 71) {
                 amaierakoLista.add(jk);
                 jokalariak.remove(i);
                 i--;
@@ -86,7 +94,7 @@ class JokalariZerrenda {
         }
     }
     
-    public boolean partidaAmaituta() {
+    private boolean partidaAmaituta() {
     	boolean amaituta = false;
         if (jokalariak.size() == 0) {
             amaituta = true;
