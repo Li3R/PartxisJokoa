@@ -13,9 +13,9 @@ public class Fitxa {
 	
 	public void setFitxarenPosizioa(int pDado) {
 	    int posizioBerria = this.pos + pDado;
-	    if (posizioBerria > 67) {
-	        int gainontzekoa = posizioBerria - 67;
-	        this.pos = 67 - gainontzekoa;
+	    if (posizioBerria > 71) {
+	        int gainontzekoa = posizioBerria - 71;
+	        this.pos = 71 - gainontzekoa;
 	    } else {
 	        this.pos = posizioBerria;
 	    }
