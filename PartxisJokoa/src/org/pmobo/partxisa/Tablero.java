@@ -18,8 +18,14 @@ class Tablero {
 
     public void tableroaSortu() {
         for (int kasillaNum = 0; kasillaNum < 71; kasillaNum++) {
-            Kasilla kasilla = new Kasilla(kasillaNum, null);
-            tablero.add(kasilla);
+        	if ((kasillaNum > 68 && kasillaNum <= 72) || kasillaNum == 12 || kasillaNum == 17 || kasillaNum == 29 || kasillaNum == 34 || kasillaNum == 46 || 
+        			kasillaNum == 51 || kasillaNum == 63 || kasillaNum == 68){
+        		Kasilla kasillaB = new KasillaBabestua(kasillaNum, null);
+        		tablero.add(kasillaB);
+        	} else {            
+        		Kasilla kasillaN = new KasillaNormala(kasillaNum, null);
+        		tablero.add(kasillaN);
+        	}
         }
     }
     
