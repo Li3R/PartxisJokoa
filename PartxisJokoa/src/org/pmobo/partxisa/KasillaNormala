@@ -1,1 +1,12 @@
+package org.pmobo.partxisa;
 
+public class KasillaNormala extends Kasilla {
+    public KasillaNormala(int pNumKasilla, Fitxa pFitxa) {
+        super(pNumKasilla, pFitxa);
+    }
+
+    @Override
+    public boolean jandDezake() {
+        return true;
+    }
+}
