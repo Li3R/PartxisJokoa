@@ -1,1 +1,12 @@
+package org.pmobo.partxisa;
 
+public class KasillaBabestua extends Kasilla {
+    public KasillaBabestua(int pNumKasilla, Fitxa pFitxa) {
+        super(pNumKasilla, pFitxa);
+    }
+
+    @Override
+    public boolean jandDezake() {
+        return false;
+    }
+}
