@@ -1,0 +1,36 @@
+package org.pmobo.partxisa;
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+public class JokalariZerrendaTest {
+    private JokalariZerrenda jz;
+
+    @Before
+    public void setUp() {
+        jz = JokalariZerrenda.getNireJokalariZerrenda();
+        jz.jokalariZerrendaGarbitu();
+    }
+
+    @Test
+    public void testPartidaAmaituta() {
+        assertTrue(jz.partidaAmaituta());
+
+        jz.addJokalaria(new Jokalaria("Test", new Fitxa()));
+        assertFalse(jz.partidaAmaituta());
+    }
+
+    @Test
+    public void testFitxaDago() {
+        Jokalaria j1 = new Jokalaria("Test1", new Fitxa());
+        Jokalaria j2 = new Jokalaria("Test2", new Fitxa());
+
+        j1.setFitxarenPosizioa(5);
+        j2.setFitxarenPosizioa(5);
+        jz.addJokalaria(j1);
+        jz.addJokalaria(j2);
+
+        assertTrue(jz.fitxaDago(5, j1));
+    }
+}
