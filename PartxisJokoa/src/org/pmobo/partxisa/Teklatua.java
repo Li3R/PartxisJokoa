@@ -25,9 +25,13 @@ class Teklatua {
         scanner.nextLine();
     }
     
-    public int jokalariKopuruaEskatu() {
-        System.out.print("Sartu jokalari kopurua: ");
-        return scanner.nextInt();
+    public int jokalariKopuruaEskatu() throws JokalariKopTxarraException {
+        System.out.print("Sartu jokalari kopurua (2 =< kop <= 4): ");
+        int jokalariKop = scanner.nextInt();
+        if (jokalariKop < 2 || jokalariKop > 4) {
+            throw new JokalariKopTxarraException();
+        }
+        return jokalariKop;
     }
 
     public String eskatuIzena() {
