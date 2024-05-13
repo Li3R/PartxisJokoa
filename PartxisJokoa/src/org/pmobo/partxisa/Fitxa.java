@@ -20,4 +20,22 @@ public class Fitxa {
 	        this.pos = posizioBerria;
 	    }
 	}
+	
+	public void janDuenFitxa() {
+		int posizioBerria = this.pos + 20;
+	    if (posizioBerria > 71) {
+	    	this.setFitxarenPosizioa(posizioBerria);
+	    } else {
+	    	this.pos = posizioBerria;
+	    }
+	}
+	
+	public void babestuaOkupatutaBadago() {
+		this.pos = this.pos - 1;
+        System.out.println("KASILLA OKUPATUTA ZEGOEN. POSIZIO BAT GALDU DUZU.");
+	}
+	
+	public void fitxaJandua() {
+		this.pos = 0;
+	}
 }
