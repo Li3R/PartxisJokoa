@@ -1,6 +1,7 @@
 package org.pmobo.partxisa;
 import java.util.*;
 
+
 class JokalariZerrenda {
     private static JokalariZerrenda nireJokalariZerrenda = null;
     private ArrayList<Jokalaria> jokalariak;
@@ -17,10 +18,19 @@ class JokalariZerrenda {
     }
 
     public int jokalariKopEskatu() {
-    	Teklatua teklatua = Teklatua.getTeklatua();
-    	int jokalariKop = teklatua.jokalariKopuruaEskatu();
-    	return jokalariKop;
+        Teklatua teklatua = Teklatua.getTeklatua();
+        int jokalariKop = 0;
+        do {
+            try {
+                jokalariKop = teklatua.jokalariKopuruaEskatu();               
+            } catch (JokalariKopTxarraException e) {
+            	System.out.println("Jokalari kopurua baliogabea da, sartu berriro (2 =< kop <= 4)");
+            }
+        } while (jokalariKop < 2 || jokalariKop > 4);
+        
+        return jokalariKop;
     }
+
     
     public void jokalariakSortu() {
     	jokalariak.clear();
@@ -61,10 +71,21 @@ class JokalariZerrenda {
             } else {
                 jk.setFitxarenPosizioa(dadoa);
             }
-
+            
+            int pNewPos = jk.fitxarenPosizioa();
+            if (this.fitxaDago(pNewPos, jk) && jk.fitxarenPosizioa() != 0 && jk.fitxarenPosizioa() != 1 && 
+            		Tablero.getTablero().babestuaDa(pNewPos)) {
+            	jk.babestuaOkupatutaBadago();
+            } 
+            else if (this.fitxaDago(pNewPos, jk) && jk.fitxarenPosizioa() != 0 && jk.fitxarenPosizioa() != 1 && 
+            		!Tablero.getTablero().babestuaDa(pNewPos)){
+            	jk.janDuenFitxa();
+            }
+            
             int pos = jk.fitxarenPosizioa();
             System.out.println("Dadoa: " + dadoa);
             System.out.println("POSIZIOA BERRIA: " + pos);
+             
             System.out.println("___________________________________");
 
             hJokalari = jokalariak.get((i+1) % jokalariak.size());
@@ -100,5 +121,25 @@ class JokalariZerrenda {
             amaituta = true;
         }
         return amaituta;
+    }
+    
+    public boolean fitxaDago(int pNewPos, Jokalaria jokalaria) {
+        Iterator<Jokalaria> itr = jokalariak.iterator();
+        boolean babestuaOkupatuta = false;
+        while (itr.hasNext() && !babestuaOkupatuta) {
+            Jokalaria jok = itr.next();
+            if (!jok.equals(jokalaria)) {
+                int posizioa = jok.fitxarenPosizioa();
+                if (posizioa == pNewPos && posizioa > 0) {
+                    babestuaOkupatuta = true;
+                    if (!Tablero.getTablero().babestuaDa(pNewPos)) {
+                    jok.fitxaJandua();
+                    System.out.println("ÑAM-ÑAM!");
+                    System.out.println(jok.getIzena() + " 0 posiziora bueltatu du.");
+                    }
+                }
+            }
+        }
+        return babestuaOkupatuta;
     }
 }
