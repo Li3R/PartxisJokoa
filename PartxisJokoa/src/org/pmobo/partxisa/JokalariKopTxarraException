@@ -1,0 +1,7 @@
+package org.pmobo.partxisa;
+
+public class JokalariKopTxarraException extends Exception{
+	public JokalariKopTxarraException() {
+		super();
+	}
+}
