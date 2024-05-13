@@ -25,4 +25,16 @@ class Jokalaria {
     public void setFitxarenPosizioa(int pDado) {
         this.fitxa.setFitxarenPosizioa(pDado);
     }
+    
+	public void janDuenFitxa() {
+		this.fitxa.janDuenFitxa();
+	}
+    
+	public void fitxaJandua() {
+		this.fitxa.fitxaJandua();
+	}
+	
+	public void babestuaOkupatutaBadago() {
+		this.fitxa.babestuaOkupatutaBadago();
+	}
 }
