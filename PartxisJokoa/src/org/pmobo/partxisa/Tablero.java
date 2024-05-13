@@ -3,10 +3,10 @@ import java.util.*;
 
 class Tablero {
     private static Tablero nireTablero = null;
-    private ArrayList<Kasilla> tablero;
+    private ArrayList<KasillaNormala> tablero;
 
     private Tablero() {
-        tablero = new ArrayList<Kasilla>();
+        tablero = new ArrayList<KasillaNormala>();
     }
 
     public static Tablero getTablero() {
@@ -15,17 +15,26 @@ class Tablero {
         }
         return nireTablero;
     }
+    
+    public boolean babestuaDa(int kasillaNum) {
+        KasillaNormala kasilla = tablero.get(kasillaNum);
+        return kasilla.babestuaDa();
+    }
+    
+    public boolean babestuenPos(int kasillaNum) {
+        return (kasillaNum > 68 && kasillaNum <= 72) || kasillaNum == 12 || kasillaNum == 17 || kasillaNum == 29 || kasillaNum == 34 || kasillaNum == 46 || 
+            kasillaNum == 51 || kasillaNum == 63 || kasillaNum == 68;
+    }
 
     public void tableroaSortu() {
         for (int kasillaNum = 0; kasillaNum < 71; kasillaNum++) {
-        	if ((kasillaNum > 68 && kasillaNum <= 72) || kasillaNum == 12 || kasillaNum == 17 || kasillaNum == 29 || kasillaNum == 34 || kasillaNum == 46 || 
-        			kasillaNum == 51 || kasillaNum == 63 || kasillaNum == 68){
-        		Kasilla kasillaB = new KasillaBabestua(kasillaNum, null);
-        		tablero.add(kasillaB);
-        	} else {            
-        		Kasilla kasillaN = new KasillaNormala(kasillaNum, null);
-        		tablero.add(kasillaN);
-        	}
+            if (babestuenPos(kasillaNum)) {
+                KasillaBabestua kasillaB = new KasillaBabestua(kasillaNum);
+                tablero.add(kasillaB);
+            } else {            
+                KasillaNormala kasillaN = new KasillaNormala(kasillaNum);
+                tablero.add(kasillaN);
+            }
         }
     }
     
